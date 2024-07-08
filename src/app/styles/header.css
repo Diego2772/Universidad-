@@ -1,0 +1,15 @@
+.bannerImage {
+  background-image: url("../../../public/images/header-superior-principal.jpg");
+  background-size: cover;
+  background-position: center;
+  height: max-content;
+}
+
+.image-slider {
+  height: 800px !important;
+  object-fit: cover !important;
+}
+
+.image-novedades {
+  height: 300px !important;
+}

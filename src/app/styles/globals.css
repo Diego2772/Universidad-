@@ -1,0 +1,99 @@
+@import url("./header.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #0077b6;
+}
+
+.degradedBlue {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 5px 0;
+}
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgba(0, 118, 181, 0.6) !important;
+}
+
+.slider-horizontal {
+  display: flex;
+  animation: swipe 5000ms linear infinite backwards;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+.nav-items {
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.nav-items:after {
+  content: "";
+  position: absolute;
+  background-color: #0077b6;
+  height: 3px;
+  width: 0%;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.nav-items:hover {
+  color: #0077b6;
+}
+
+.nav-items:hover:after {
+  width: 50%;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fadeInDown {
+  animation: fadeInDown 0.3s ease-in-out;
+}
+
+.fadeOutUp {
+  animation: fadeOutUp 0.3s ease-in-out;
+}
