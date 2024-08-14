@@ -21,7 +21,7 @@ const Galeria = () => {
   };
 
   const images = [
-    '/images/Galeria/EDITADAS/1.png',
+    '/images/Galeria/EDITADAS/2.png',
     '/images/Galeria/EDITADAS/10.png',
     '/images/Galeria/EDITADAS/22.png',
     '/images/Galeria/EDITADAS/16.png',
