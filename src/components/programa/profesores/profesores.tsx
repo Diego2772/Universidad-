@@ -1,34 +1,49 @@
-export default function Profesores() {
-    return (
-      <>
-        <div className="container mx-auto px-4 py-12">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6 sm:flex sm:items-center sm:justify-between">
-              <div>
-                <div className="flex my-10 justify-center items-center">
-                  <h1 style={{ fontWeight: "bold", fontSize: "2rem" }}>
-                    Profesores
-                  </h1>
-                </div>
-                <div className="flex my-10 justify-left items-center">
-                  <h1 style={{ fontWeight: "bold", fontSize: "1.5rem" }}>
-                    Profesores
-                  </h1>
-                </div>
-  
-                <p className="text-gray-600 sm:text-base lg:text-lg">
-                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos mollitia nam maiores eaque itaque! Nihil nam quibusdam corporis incidunt ipsam quaerat eaque. Tempora error voluptate sit omnis nemo odit eos.
-                </p>
-                <br />
+"use client"
+import { useState } from 'react';
 
-             
-              </div>
-            </div>
+interface TeacherCardProps {
+  name: string;
+  type: string;
+  imageUrl: string;
+  info: string;
+}
+
+export default function TeacherCard({ name, type, imageUrl, info }: TeacherCardProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => setIsFlipped(!isFlipped);
+
+  return (
+    <div
+      className="w-80 h-96 perspective cursor-pointer"
+      onClick={handleFlip}
+    >
+      <div
+        className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}
+      >
+        {/* Cara frontal */}
+        <div className="absolute w-full h-full backface-hidden">
+          <div className="bg-white shadow-card rounded-lg flex flex-col items-center justify-center w-full h-full">
+            <img
+              src={imageUrl}
+              alt={name}
+              className="w-40 h-40 object-cover rounded-full mb-4"
+            />
+            <h2 className="text-lg font-bold">{name}</h2>
+            <p className="text-gray-600">{type}</p>
           </div>
         </div>
-  
-        <br />
-        <div></div>
-      </>
-    );
-  }
+
+        {/* Cara trasera */}
+        <div className="absolute w-full h-full backface-hidden transform rotate-y-180">
+          <div className="bg-gray-100 shadow-lg rounded-lg p-4 flex items-center justify-center w-full h-full">
+            <p className="text-center">{info}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
