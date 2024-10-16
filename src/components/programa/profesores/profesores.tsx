@@ -6,9 +6,10 @@ interface TeacherCardProps {
   type: string;
   imageUrl: string;
   info: string;
+  correo: string;
 }
 
-export default function TeacherCard({ name, type, imageUrl, info }: TeacherCardProps) {
+export default function TeacherCard({ name, type, imageUrl, info, correo }: TeacherCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleFlip = () => setIsFlipped(!isFlipped);
@@ -36,10 +37,13 @@ export default function TeacherCard({ name, type, imageUrl, info }: TeacherCardP
 
         {/* Cara trasera */}
         <div className="absolute w-full h-full backface-hidden transform rotate-y-180">
-          <div className="bg-gray-100 shadow-lg rounded-lg p-4 flex items-center justify-center w-full h-full">
-            <p className="text-center">{info}</p>
+          <div className="bg-gray-100 shadow-lg rounded-lg p-4 flex flex-col items-center justify-center w-full h-full">
+            {/* Aquí usamos dangerouslySetInnerHTML para procesar los saltos de línea */}
+            <p className="text-center" dangerouslySetInnerHTML={{ __html: info }} />
+            <p className="text-center">{correo}</p>
           </div>
         </div>
+
       </div>
     </div>
   );

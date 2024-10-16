@@ -8,6 +8,7 @@ interface Teacher {
   type: string;
   imageUrl: string;
   info: string;
+  correo: string;
 }
 
 async function fetchTeachers(): Promise<Teacher[]> {
@@ -15,18 +16,20 @@ async function fetchTeachers(): Promise<Teacher[]> {
   const teachers = [
     {
       id: 1,
-      name: 'María García',
-      type: 'Planta',
-      imageUrl: '/images/galeria/EDITADAS/1.png',
-      info: 'Experta en literatura española con 15 años de experiencia docente.',
+      name: 'Tarazona Celis Cristian Leonardo',
+      type: 'Cátedra',
+      imageUrl: '/images/galeria/Docentes/CristianTarazona.jpeg',
+      info: 'Ingeniero Electronico<br/>Magister en Ingenieria Electronica',
+      correo:'cristianleonardotc@ufps.edu.co',
     },
     // Agrega más profesores aquí
     {
       id: 2,
-      name: 'Juan Pérez',
+      name: 'Sandoval Martinez Gloria Esmeralda',
       type: 'Cátedra',
-      imageUrl: '/images/galeria/EDITADAS/2.png',
-      info: 'Profesor de matemáticas con especialización en álgebra avanzada.',
+      imageUrl: '/images/galeria/Docentes/SandovalMartinezGloriaEsmeralda.jpeg',
+      info: 'Ingeniero Electromecanico<br/>Especialista en Gerencia de Recursos Energeticos<br/>Magister en Sistemas de Distribución de Energia Electrica',
+      correo:'gloriaesmeraldasm@ufps.edu.co',
     },
     {
       id: 3,
@@ -34,6 +37,7 @@ async function fetchTeachers(): Promise<Teacher[]> {
       type: 'Planta',
       imageUrl: '/images/galeria/EDITADAS/3.png',
       info: 'Doctora en biología con énfasis en investigación genética.',
+      correo:'cristianleonardotc@ufps.edu.co',
     },
     {
       id: 4,
@@ -41,6 +45,7 @@ async function fetchTeachers(): Promise<Teacher[]> {
       type: 'Cátedra',
       imageUrl: '/images/galeria/EDITADAS/4.png',
       info: 'Profesor de historia y estudios culturales contemporáneos.',
+      correo:'cristianleonardotc@ufps.edu.co',
     },
     {
       id: 5,
@@ -48,6 +53,7 @@ async function fetchTeachers(): Promise<Teacher[]> {
       type: 'Cátedra',
       imageUrl: '/images/galeria/EDITADAS/5.png',
       info: 'Profesor de historia y estudios culturales contemporáneos.',
+      correo:'cristianleonardotc@ufps.edu.co',
     },
   ];
 
@@ -76,6 +82,7 @@ export default async function TeachersPage() {
                   type={teacher.type}
                   imageUrl={teacher.imageUrl}
                   info={teacher.info}
+                  correo={teacher.correo}
                 />
               </div>
             ))}
