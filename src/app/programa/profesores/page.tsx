@@ -18,7 +18,7 @@ async function fetchTeachers(): Promise<Teacher[]> {
       id: 1,
       name: 'Tarazona Celis Cristian Leonardo',
       type: 'Cátedra',
-      imageUrl: '/images/galeria/Docentes/CristianTarazona.jpeg',
+      imageUrl: '/images/Galeria/Docentes/CristianTarazona.jpeg',
       info: 'Ingeniero Electronico<br/>Magister en Ingenieria Electronica',
       correo:'cristianleonardotc@ufps.edu.co',
     },
